@@ -44,6 +44,7 @@ steps:
       
       echo 'Hello world'
       echo $(modulePath)
+      go get github.com/mitchellh/gox
       ./build.sh
     workingDirectory: '$(modulePath)'
 
