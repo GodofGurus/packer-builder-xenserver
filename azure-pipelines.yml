@@ -38,6 +38,7 @@ steps:
     cd src/github.com/xenserver
     git clone https://github.com/xenserver/packer-builder-xenserver.git
     cd packer-builder-xenserver
+    go get github.com/mitchellh/gox
     ./build.sh
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
