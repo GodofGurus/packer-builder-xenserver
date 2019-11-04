@@ -38,5 +38,5 @@ steps:
   displayName: 'Get dependencies, then build'
 - task: Bash@3
   inputs:
-    filePath: '/build.sh'
+    filePath: './build.sh'
 
