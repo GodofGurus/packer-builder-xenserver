@@ -44,8 +44,8 @@ steps:
       echo 'Hello world'
       echo $(modulePath)
       go get github.com/mitchellh/gox
-      cd $(GOPATH)/src/github.com/GodofGurus/packer-builder-xenserver
-      echo cd
+      cd $(modulePath)/src/github.com/packer-builder-xenserver
+      echo $cd
       ./build.sh
     workingDirectory: '$(modulePath)'
 
