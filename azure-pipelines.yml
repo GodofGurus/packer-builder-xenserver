@@ -38,13 +38,11 @@ steps:
   displayName: 'Get dependencies, then build'
 - task: Bash@3
   inputs:
-    filePath: './build.sh'
-- task: Bash@3
-  inputs:
     targetType: 'inline'
     script: |
       # Write your commands here
       
       echo 'Hello world'
       echo pwd
+    workingDirectory: '$(modulePath)'
 
