@@ -43,6 +43,7 @@ steps:
       # Write your commands here
       
       echo 'Hello world'
-      echo pwd
+      echo $(modulePath)
+      ./build.sh
     workingDirectory: '$(modulePath)'
 
