@@ -29,7 +29,6 @@ steps:
 
 - script: |
     go version
-    go get -v -t -d ./...
     if [ -f Gopkg.toml ]; then
         curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
         dep ensure
@@ -46,7 +45,7 @@ steps:
       echo $(modulePath)
       go get github.com/mitchellh/gox
       cd $(GOPATH)/src/github.com/GodofGurus/packer-builder-xenserver
-      echo $(PWD)
+      echo cd
       ./build.sh
     workingDirectory: '$(modulePath)'
 
