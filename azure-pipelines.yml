@@ -43,3 +43,9 @@ steps:
     ./build.sh
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'xs'
+    publishLocation: 'pipeline'
