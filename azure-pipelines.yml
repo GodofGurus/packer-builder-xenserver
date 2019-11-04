@@ -43,18 +43,3 @@ steps:
     ./build.sh
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      echo 'Hello world'
-      echo $(modulePath)
-      go get github.com/mitchellh/gox
-      cd $(modulePath)
-      pushd $(GOPATH)
-      pwd
-      ./build.sh
-    workingDirectory: '$(modulePath)'
-
