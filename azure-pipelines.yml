@@ -33,8 +33,7 @@ steps:
         curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
         dep ensure
     fi
-    cd ($GOROOT)
-    cd ($GOPATH)
+    cd $(GOROOT)
     mkdir -p src/github.com/xenserver/
     cd src/github.com/xenserver
     git clone https://github.com/xenserver/packer-builder-xenserver.git
