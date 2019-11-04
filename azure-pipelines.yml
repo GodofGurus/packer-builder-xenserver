@@ -33,6 +33,7 @@ steps:
         curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
         dep ensure
     fi
+    ./build.sh
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
 - task: Bash@3
