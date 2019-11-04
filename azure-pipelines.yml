@@ -35,5 +35,8 @@ steps:
         dep ensure
     fi
     #go build -v .
+- task: Bash@3
+  inputs:
+    filePath: '/build.sh'
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
