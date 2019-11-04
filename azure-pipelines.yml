@@ -33,6 +33,18 @@ steps:
         curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
         dep ensure
     fi
+    go get github.com/xenserver/packer-builder-xenserver/builder/xenserver/iso
+    go get github.com/mitchellh/packer/packer/plugin
+    go get github.com/xenserver/packer-builder-xenserver/plugin/builder-xenserver-xva
+    go get github.com/mitchellh/go-vnc
+    echo 'current working directory is'
+    cd pwd 
+    echo 'changing to'
+    cd $(GOPATH)
+    cd pwd
+    mkdir ./src/github.com/GodofGurus/packer-builder-xenserver
+    git clone https://github.com/GodofGurus/packer-builder-xenserver.git  ./src/github.com/GodofGurus/packer-builder-xenserver
+    cd src/github.com/GodofGurus/packer-builder-xenserver
     # Determine the arch/os combos we're building for
     XC_OS=${XC_OS:-$(go env GOOS)}
     XC_ARCH=${XC_ARCH:-$(go env GOARCH)}
@@ -78,8 +90,6 @@ steps:
     echo
     echo "==> Results:"
     ls -hl bin/
-
-    ./build.sh
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
 - task: Bash@3
